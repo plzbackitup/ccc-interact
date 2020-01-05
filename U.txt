@@ -1,0 +1,89 @@
+start/Mingyu wakes up in the Bosses' office. It seems like it's early afternoon.<N>S.Coups and Hoshi are engrossed in a game of chess, while Seungkwan plays around at the pool table.<N>Mingyu scratches his head and tries to remember what he was doing.{M7/Take a walk outside.}{M1a/Play pool with Seungkwan.}{M1b/Watch the chess game.}
+
+M1a/Seungkwan says he doesn't want to play with Mingyu.<2><ring>The phone rings. Mingyu goes to pick it up.<lapse>"Mingyu! Your motorcycle is gone!"<N>Whoever it is abruptly hangs up.<N>Someone has stolen Mingyu's motorcycle!{M6/Go outside and check!}{M9/Tell S.Coups.}
+
+M1b/Mingyu watches S.Coups and Hoshi play chess for a while. It's fun.<ring>The phone rings. Mingyu goes to pick it up.<lapse>"Mingyu! Your motorcycle is gone!"<N>Whoever it is abruptly hangs up.<N>Someone has stolen Mingyu's motorcycle!{M6/Go outside and check!}{M9/Tell S.Coups.}
+
+M6/Mingyu steps outside. Then everything goes dark./-Mingyu{O1/Switch character to Hoshi.}
+
+M7/Mingyu steps outside only to find his usual spot for his motorcycle empty.<N>Someone has stolen his motorcycle!{M8/Borrow Hoshi's.}{M9/Go inside and tell S.Coups.}
+
+M8/Mingyu leaves the building by his usual route. Suddenly, he feels a pain in his shoulder./-Mingyu{O1/Switch character to Hoshi.}
+
+M9/How dare they! Hoshi, S.Coups, and Seungkwan all come out and help Mingyu look for clues.<lapse>Seungkwan gasps and points to a scrap of t-shirt stuck in the building's barbed wire fence.{M10a/Inspect the t-shirt.}{M10b/Sniff the t-shirt.}
+
+M10a/Mingyu takes the t-shirt from Seungkwan and looks at it closely. It's a small strip of white fabric. There seems to be a design printed on it.<N>"Who do you think stole your motorcycle?" asks S.Coups.{M10c/"The Rockers!"}{M10d/"The Retrofuturists!"}
+
+M10b/Mingyu takes the t-shirt from Seungkwan and sniffs it experimentally. Funnily enough, the fabric has the cinnamon smell of their lounge.<N>"Who do you think stole your motorcycle?" asks S.Coups.{M10c/"The Rockers!"}{M10d/"The Retrofuturists!"}{M10e/"You did!"}
+
+M10c/The Bosses consider this for a while. "I don't think so," says S.Coups./-DK<day1>{O1/Switch character to Hoshi.}
+
+M10d/Seungkwan nods vehemently. "I wouldn't be surprised!" Seungkwan declares.<N>Mingyu says, "I bet it was..."{M10da/"Vernon."}{M10db/"Dino."}{M10dc/"Jun."}{M10dd/"Joshua."}{M10de/"...Let's go home."}
+
+M10da/"I knew it!" exclaims Seungkwan. "That would be just like him. Let's go!"{M10daa/"We don't have any evidence yet..."}{M10dab/"Yah!"}
+
+M10daa/Seungkwan glares at Mingyu. "Are you scared of a fight or something?!"<N>"Maybe we should all take the day off," suggests S.Coups.{M10i/Walk home alone.}{M10j/Go home with S.Coups.}
+
+M10dab/The Bosses storm the Retrofuturists' arcade. However, the arcade is empty.{M10i/Walk home alone.}{M10j/Go home with S.Coups.}
+
+M10db/Seungkwan is silent. Hoshi looks betrayed.<N>"But we played video games together the other day!" Hoshi exclaims.{M10i/Walk home alone.}{M10j/Go home with Hoshi.}
+
+M10dc/"Hah!" exclaims Seungkwan.{M10dab/Storm the arcade.}{M10i/Walk home alone.}{M10dcc/Go home with Seungkwan.}
+
+M10dcc/Mingyu and Seungkwan are halfway home when Seungkwan stops. "Go on without me," Seungkwan says. He gestures to a nearby pay phone. "I need to make a call."{M10i/Continue alone.}
+
+M10dd/"Hah!" exclaims Seungkwan.<N>"Would Shua do that?" muses S.Coups, scratching his head.{M10i/Walk home alone.}{M10j/Go home with S.Coups.}
+
+M10de/Hoshi gives Mingyu a ride back home. Mingyu falls asleep mourning the loss of his motorcycle.<day1>{O1/Switch character to Hoshi.}
+
+M10e/"What? Why?" asks S.Coups.<N>"You wanna say that one more time-" says Seungkwan.<N>"Wait, you think we took it?" asks Hoshi.{M10f/Apologize.}{M10g/"That t-shirt smells like the office. Maybe we should go check there for clues."}{M10h/"I said I think you guys stole my motorcycle!"}
+
+M10f/"Sorry, I didn't mean that," Mingyu says. "Maybe it was..."{M10c/"The Rockers!"}{M10d/"The Retrofuturists!"}
+
+M10g/"What?! Why would we do that?" asks Seungkwan.<N>"Yah, why would we do that?" Hoshi asks.<N>S.Coups hums thoughtfully.{M10gg/Go to the office.}{M10i/Give it up and go home alone.}
+
+M10gg/Mingyu reaches the office just in time to see a figure wearing denim climb out of the window and disappear. It's too late.{M10i/Walk home alone.}{M10j/Go home with S.Coups.}
+
+M10h/"What's up with you?" yells Seungkwan, who shoves Mingyu into Hoshi. Hoshi shoves Mingyu back at Seungkwan.<N>"Don't fight," says S.Coups. "Maybe we should all take the day off."{M10i/Walk home alone.}{M10j/Go home with S.Coups.}
+
+M10i/Mingyu sings softly to himself on his way back home. Then everything goes dark./-Mingyu{O1/Switch character to Hoshi.}
+
+M10j/Mingyu arrives home safely.<day1>{O1/Switch character to Hoshi.}
+
+O1/The next morning, Hoshi brightly walks to the gym to exercise.<N>However, he quickly realizes that something is off as he passes the painting in the office hallway.<lapse>The painting, which conceals the Bosses' safe, is skewed.{O2/Check the safe.}{O4a/Ignore it.}
+
+O2/The safe is empty.<ring>The phone rings. Hoshi answers.<lapse>"Hoshi, I saw who took your stuff! They were heading towards S.S.W.A."{O3/"Who are you?"}{O4/"Why should I believe you?"}
+
+O3/"Oh, and go alone!" the voice says, and then hangs up.{O5/Go alone.}{O6/Bring the Bosses along.}
+
+O4/"Fine, then don't believe me," the voice snaps, then hangs up./-Mingyu{O4a/Ignore the call.}{O6/Bring the Bosses to the location.}
+
+O4a/Hoshi continues to the gym and does his pull-ups in peace.{endgame/Continue.}
+
+O5/Hoshi finds himself standing in front of an old factory building. Luckily, he brought his trusty umbrella to use as a weapon.{O5a/Enter.}
+
+O5a/The corridor opens into a gray-colored room, empty except for two things: Woozi, and a telephone at Woozi's feet.{O5ab/"Yah! Did you steal our stuff?"}{O5ab/"Woozi! It's so good to see you!"}{O5ac/Hug Woozi.}
+
+O5ab/Woozi stares blankly at Hoshi. "Do I know you?" asks Woozi.{O5ac/"Nope?"}{O5ac/Hug Woozi.}
+
+O5ac/Woozi grabs Hoshi's arms and drags him to the window, flipping him into the river below./-Hoshi<endgame/Continue.>
+
+O6/The Bosses enter the factory, ready for revenge. The corridor opens into a gray-colored room.<N>One of the Rockers, Woozi, stands there. Hoshi sees that a telephone sits at Woozi's feet.<2><N>"You stole our stuff," accuses S.Coups.<N>"No, I didn't," says Woozi, looking angry.{O7/Attack!}{O8/"Then why are you here?"}
+
+O7/Hoshi yells, "Get him, Mingyu!"<lapse><switchMingyu:O7m,O7x>{null/null}
+
+O7m/Mingyu punches Woozi in the face. Seungkwan snatches the telephone and hands it to S.Coups, and the Bosses speed away.<ring>S.Coups answers the phone, then frowns and hangs up.<N>"We've... come to the last stage? Well, we need to find out whoever's messing with us."<N>Seungkwan and Mingyu nod in agreement.{X5/Follow S.Coups.}
+
+O7x/However, Mingyu isn't there. Woozi takes advantage of the confusion to escape with the telephone and the Bosses are left without a lead.{endgame/Continue.}
+
+O8/Woozi hesitates. S.Coups yells, "Get him, Mingyu!"<lapse><switchMingyu:O7m,O7x>{null/null}
+
+
+
+
+
+
+
+
+
+

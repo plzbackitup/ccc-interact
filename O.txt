@@ -1,0 +1,116 @@
+start/Minghao wakes up in the Rockers' barbershop. He's sitting on the couch, and feels vaguely hungry. Dim light filters through the blinds; it's almost night.<N>"Yah, are you awake? Help me and DK clean up," says Wonwoo.{H2/Help them clean.}{H7/Go find something to eat.}
+
+H2/As Minghao wipes the dust off a photograph, the phone rings.<ring>Wonwoo picks up. "Who is it?" Wonwoo asks.<lapse>Wonwoo's eyes widen, and he slams down the phone, grabbing his jacket and heading to the door.{H2a/"Stop- where are you going?"}{H11/Let him go.}
+
+H2a/"There's been a robbery at my apartment, I can't wait. Stay here," says Wonwoo.{H11/Let him go.}{H3/Insist on going with him.}
+
+H3/Wonwoo's neighborhood feels deserted. His apartment is dark and empty. Minghao follows him inside carefully.<lapse>Wonwoo quickly discovers that his computer has been stolen.{H4/Look for clues with Wonwoo.}{H5/Find a telephone to call for backup.}{H10/Go back to the barbershop with Wonwoo.}
+
+H4/Minghao walks through the apartment in search of clues.<N>However, he feels increasingly dizzy and decides to sit down... <1>just for a moment...<1>/-Minghao{J1/Switch character to Jeonghan.}
+
+H5/Minghao finds Wonwoo's telephone and dials the barbershop.<lapse>Nobody is answering. Minghao goes to tell Wonwoo about this, but can't find him.<N>Maybe Wonwoo already left?/-Wonwoo{H10/Return to the barbershop.}{H10b/Go home.}
+
+H7/Minghao rides his motorcycle to a nearby Chinese restaurant.<N>However, on the way there, he runs into two acquaintances: S.Coups and Mingyu, of the rival Bosses gang.<N>They accuse him of stealing Mingyu's motorcycle, citing a scrap of t-shirt they found in their parking lot as evidence.{H8/Calmly deny it.}{H9/Fight them!}{H10/Run!}
+
+H8/Minghao explains to S.Coups and Mingyu that he's been inside all day and hasn't been near their office.<N>Also, he has his own perfectly functional motorcycle.<2><lapse>S.Coups and Mingyu seem to believe this and leave Minghao alone.<N>Minghao proceeds to the restaurant, where he has a delicious meal of hot pot.{H10/Return to the barbershop.}{H10b/Ride home.}
+
+H9/Minghao draws a pair of nunchucks and prepares to fight the Bosses!<2><N>Choose a letter:{H9b/A}{H9a/B}{H9a/C}{H9a/D}
+
+H9a/S.Coups and Mingyu shriek and run away. Minghao pockets his nunchucks and proceeds to the restaurant, where he has a delicious meal of hot pot.{H10/Return to the barbershop.}{H10b/Ride home.}
+
+H9b/S.Coups evades Minghao's attack. Mingyu pushes Minghao off his motorcycle and the two Bosses ride away.{H9c/Walk home alone.}{H9d/Find a telephone and call for help.}
+
+H9c/Minghao walks home alone. The sky is dark and the streets are deserted.<N>Minghao clutches his nunchucks tightly, but suddenly everything goes dark./-Minghao{J1/Switch character to Jeonghan.}
+
+H9d/Minghao finds a nearby pay phone.<lapse>Jeonghan answers, and sends Woozi over to bring Minghao back to the barbershop.{H10/Return to the shop.}
+
+H10/Minghao returns to the barbershop. He flops onto the couch, where Woozi is idly spinning the circular dial of the barbershop's telephone.{H12a/Sit quietly.}{H11a/Tell Woozi that his hair looks amazing.}
+
+H10b/Minghao returns home safely.<day1>{J1/Switch character to Jeonghan.}
+
+H11/Wonwoo leaves. Minghao flops onto the couch, where Woozi is idly spinning the circular dial of the barbershop's telephone.{H12a/Sit quietly.}{H11a/Tell Woozi that his hair looks amazing.}
+
+H11a/Woozi gives you a strange look and moves to sit somewhere else.{H12a/Oh well.}
+
+H12a/The barbershop has long since closed, but the doorbell to the barbershop rings.<lapse>A Retrofuturist steps inside- it's Jun.<N>"Hullo! Can I get a haircut please?" Jun asks Minghao.{H12c/"Go home. We're closed."}{H12b/"Sure."}
+
+H12b/Woozi glares at Minghao, but doesn't comment as Minghao gets his things set up.<N>Jun sits down happily and begins chattering away.<2><ring>{H13a/Ignore the telephone.}{H13b/Pick up.}
+
+H12c/Jun is disappointed.<2><N>"Please?" Jun asks.{H12d/"No."}{H12b/"...Fine."}
+
+H12d/Jun leaves. Minghao spends the night playing cards with Woozi./-Jun{J1/Switch character to Jeonghan.}
+
+H13a/Woozi picks up the telephone instead.<lapse>Woozi listens to the phone for a while, then says, "Too bad."<lapse>Woozi frowns and hangs up, then grabs his jacket and leaves.<N>Seems like Woozi is going home.<2><N>Minghao finishes Jun's haircut with a vague sense of unrest. Jun pays and leaves./-Woozi{J1/Switch character to Jeonghan.}
+
+H13b/"Hello?" says the voice on the phone. "Is Jun there?"{H13c/"What do you want?"}{H13d/Give the phone to Jun.}
+
+H13c/"I see his cat in the street. I think it escaped," the voice says, and hangs up.<N>Minghao tells Jun this, and Jun immediately heads to the door.{H13e/Go with Jun.}{H12d/Let him go.}
+
+H13d/Minghao gives Jun the telephone. Jun's eyes widen and he scrambles for the door.<N>"My cat's escaped!" Jun exclaims.{H13e/Go with Jun.}{H12d/Let him go.}
+
+H13e/Minghao follows Jun as he tracks down his small tabby kitty and recaptures it.<N>The streets are dark and dangerous- at one point, Minghao pulls Jun out of the way of a speeding motorcycle- but they both make it through with no injuries.<day1>{J1/Switch character to Jeonghan.}
+
+J1/<noprefixring>Jeonghan is rudely awakened from his nap by the ear-splitting ring of the telephone. Grouchily, Jeonghan answers it.<lapse>"Hoshi is hurt. Please help. Come to the old factory, S.S.W.A."<N>Jeonghan frowns. What should he do?{J2/Go back to sleep.}{K1/Send DK. (switch character)}{Z1/Send Woozi. (switch character)}
+
+J2/Jeonghan rolls over and sleeps through the rest of the game./-Hoshi{endgame/Continue.}
+
+K1/DK is alarmed to hear that Hoshi's been injured, and immediately rides to the building to see if he can help.<N>The address Jeonghan told him seems to be for some sort of old factory.<lapse>The entryway opens easily. DK steps inside.<N>The interior is surprisingly clean, with a floor made of gray slate. There's a junction up ahead...{K3a/Turn left.}{K3b/Turn right.}
+
+K3a/DK follows the pathway into a small room. Uh oh... it seems DK has run into a dead end.<N>He turns around, but the door has shut behind him./-DK{Z1/Switch character to Woozi.}
+
+K3b/DK follows the pathway. There's another junction up ahead.{K3c/Turn left.}{K3a/Turn right.}
+
+K3c/DK finally arrives in an open room, where a single telephone rests on the floor.<N>Behind him, there are footsteps, and suddenly the Boss unit angrily bursts in: <bosses>.<lapse>It seems that Hoshi is perfectly healthy.<N>"Hey!" Hoshi shouts. "Give us back our stuff!"{K3d/"What stuff?"}{K3e/"No! It's mine!"}
+
+K3d/Hoshi gets closer and frowns, motioning for the rest of the group to stop.<N>"DK? Why are you here?"{K3f/"Someone called us and said you were hurt."}{K3e/"I like pizza!"}
+
+K3e/Seungkwan pushes DK out of the window./-DK{Z1/Switch character to Woozi.}
+
+K3f/The Boss unit listens as DK explains the situation earnestly.<lapse>"All right, we believe you," says S.Coups. Hoshi shakes DK's hand and thanks him.<2><ring>Hoshi picks up the phone and listens.<lapse>Hoshi wrinkles his nose and hangs up. "Another address. Well, come on- we'll keep going until we figure out who's doing all this."{X5/Follow the Bosses.}
+
+Z1/Woozi takes an extra umbrella and rides to the building where Jeonghan says Hoshi was last seen.<lapse>The address Jeonghan told him seems to be for some sort of old factory building.{Z2/Enter.}
+
+Z2/Woozi enters the building, navigating to a large open room. He parks his motorcycle in a corner. The room is empty.{Z3/Look around.}{Z3/Leave.}
+
+Z3/Before Woozi can do anything, he hears the roar of engines as <bosses> ride into the room. Hoshi seems to be perfectly fine.<N>"You stole my motorcycle!" accuses Mingyu, who is riding what looks like a neon green moped.<2><N>The Bosses approach Woozi.{Z3a/Tell Mingyu his new bike looks stupid.}{Z3b/Back away.}
+
+Z3a/Mingyu punches Woozi.{Z3b/Back away.}
+
+Z3b/Woozi backs into a corner, almost tripping on something.<N>A telephone? He picks it up.{Z3c/Stall for time.}{Z3d/Call Minghao.}
+
+Z3c/"I really didn't steal anything," says Woozi.<N>"Oh, yeah? Why are you here then?" asks Seungkwan.{Z3d/Call Minghao.}{Z3e/Run for it.}
+
+Z3d/Woozi dives behind his motorcycle and dials the barbershop. Woozi closes his eyes.<lapse><switchMinghao:Z3dd,Z3e>{null/null}
+
+Z3dd/Woozi makes the call then throws the telephone at Mingyu.<N>The Bosses pull back, and seem to be discussing what to do.{Z5/Switch character to Minghao.}
+
+Z3e/Minghao never arrives. Woozi's escape fails./-Woozi{endgame/Continue.}
+
+Z5/Minghao arrives at the factory building, plowing through a door or two.<N>He reaches the room and sees two things: Mingyu, holding a telephone, and Woozi hiding behind a motorcycle, surrounded by the rest of the Bosses.{Z6/Scare away the Bosses from Woozi.}{Z7/Confront Mingyu.}
+
+Z6/Minghao rides at full speed towards the Bosses, who scatter.<N>Woozi climbs onto his own motorcycle, and Minghao and Woozi escape successfully.{endgame/Continue.}
+
+Z7/"Hey!" Minghao shouts.<2><N>Minghao jumps off his motorcycle and knocks the telephone out of Mingyu's hand. The rest of the Bosses turn around.<lapse>"Hey!" protests Mingyu.<phonegame:Z77,Z7a,Z7b>{null/null}
+
+Z77/Minghao grabs the telephone and runs for it, not having time to see if Woozi is following.<lapse>"Central garage. I'll be there."<N>Behind him, Minghao can hear engines starting as <bosses> begin to pursue him.{X5/Go faster!}
+
+Z7a/Mingyu grabs the telephone first.<2><N>Minghao and Woozi take advantage of the distraction to make a run for it.<N>They take shelter across the street and wait for the Bosses to leave./-DK{endgame/Continue.}
+
+Z7b/In a shocking turn of events, a motorcycle rockets through the walls, spraying plaster everywhere.<N>Minghao is knocked aside as the motorcyclist grabs the phone and zooms away.{Z8/Hold back the Bosses.}{Z9/Chase down the motorcyclist.}
+
+Z8/A fight breaks out. Woozi manages to escape, but Minghao does not./-Minghao{endgame/Continue.}
+
+Z9/Minghao and Woozi put aside their grudge with the Bosses to give chase to the motorcyclist, who appears to be Vernon from the Retrofuturists.{X5/Go faster!}
+
+X5/
+
+
+
+
+
+
+
+
+
+
+
