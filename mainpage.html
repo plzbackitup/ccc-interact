@@ -1,0 +1,513 @@
+<html> 
+<head> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script> 
+<script src="http://www.skulpt.org/js/skulpt.min.js" type="text/javascript"></script> 
+<script src="http://www.skulpt.org/js/skulpt-stdlib.js" type="text/javascript"></script>
+<link rel="stylesheet" href="mystyle.css">
+</head> 
+
+<!-- added features: word wrap, scrolling output box -->
+<!-- bugs: ring phone game, replay game after finish; add link to ccc mv -->
+
+<body onclick="refocus()"> <!-- refocus keeps the cursor inside the input box -->
+<!-- Site layout -->
+<form> 
+<textarea hidden id="yourcode">#!/bin/python3
+
+# insert code here ----------------------------------------------------------------
+
+import random
+import time
+import re
+import urllib.request
+
+'''Game variables!'''
+gameOver = False
+currentCode = "start" # address of the current scenario
+# Member list
+bosses = {"S.Coups":1, "Mingyu":1, "Seungkwan":1, "Hoshi":1} # alive = 1, missing = 0
+rockers = {"Wonwoo":1, "Woozi":1, "Jeonghan":1, "DK":1, "Minghao":1}
+retros = {"Vernon":1, "Joshua":1, "Jun":1, "Dino":1}
+# Player codes: shortcut for determining current player
+codeToPlayer = {"H":"Minghao","J":"Jeonghan","K":"DK","Z":"Woozi","M":"Mingyu","O":"Hoshi","V":"Vernon","N":"Jun","U":"Joshua"}
+# Logging variables
+LOGGER = [] # for playtesters, log scenarios chosen
+lastTime = time.time() # for logging time spent on each stage
+# Miscellaneous
+PLAYER = None # name of the current player
+TEAM = None # name of the team of the current player
+events = None # replaced by a dictionary by loadInfo
+
+for i in range(100):
+    print("\n") # to view text box from bottom first
+
+prefix = "https://raw.githubusercontent.com/temp-ccc-acc/ccc-interact/master/"
+links = ["N", "O", "U"]
+L = {} # stores the actual text
+for lkey in links:
+    request = urllib.request.urlopen(prefix+lkey+".txt")
+    R = request.read()
+    try:
+        R = R.decode()
+    except:
+        pass
+    R = R.replace('\r', '')
+    L[lkey.lower()] = R
+
+def inpt(anytext=""): # added for compatibility with web console, to run regularly, remove the [:-1] from this function
+    ''' like input(), but it doesn't record the last character (\n) '''
+    ans = input(anytext)
+    return ans[:-1]
+
+def loadInfo(filename, withinCode = True):
+    ''' load contents of game file, withinCode if pulling from string within code '''
+    ''' L is loaded externally '''
+    events = {} # stores all scenarios
+    if withinCode:
+        lines = L[filename.split(" ")[0][-1]].split("\n\n")
+    else:
+        with open(filename, "r") as myFile:
+            lines = myFile.readlines()
+    for line in lines:
+        if line.isspace() or len(line) == 0: # empty line
+            pass
+        else: # load into scenario
+            eventCode = line.split('/')[0] # text processing
+            mainText = line.split('/')[1].split('{')[0]
+            if withinCode:
+                options = "{".join(line.split('{')[1:])[:-1].split('}{')
+            else:
+                options = "{".join(line.split('{')[1:])[:-2].split('}{')
+            options = [tuple(option.split('/')) for option in options]
+            if len(options[0]) == 1:
+                options = []
+            variables = None
+            if len(line.split('{')[0].split('/'))>2:
+                variables = line.split('{')[0].split('/')[2]
+            
+            events[eventCode] = (mainText, options, variables) # save scenario into events
+    return events
+
+def printAlive(endmark='\n'):
+    ''' nicely prints status of all members '''
+    print("BOSSES ("+str(sum(bosses.values()))+"/4)\t\t", " ".join([member.upper() for member in bosses.keys() if bosses[member] == 1]))
+    print("ROCKERS ("+str(sum(rockers.values()))+"/5)\t\t", " ".join([member.upper() for member in rockers.keys() if rockers[member] == 1]))
+    print("RETROFUTURISTS ("+str(sum(retros.values()))+"/4)\t", " ".join([member.upper() for member in retros.keys() if retros[member] == 1]), end=endmark)
+
+def aliveMembers(team):
+    ''' returns the remaining members of the given team as a string phrase '''
+    if team == "bosses":
+        mems = [member for member in bosses.keys() if bosses[member] == 1]
+    if team == "rockers":
+        mems = [member for member in rockers.keys() if rockers[member] == 1]
+    if team == "retros":
+        mems = [member for member in retros.keys() if retros[member] == 1]
+    if len(mems) == 0:
+        return "nobody"
+    if len(mems) == 1:
+        return mems[0]
+    if len(mems) == 2:
+        return ('{} and {}'.format(mems[0], mems[1]))
+    return ('{}, and {}'.format(', '.join(mems[:-1]), mems[-1]))
+
+def timeLapse(prefix=True):
+    ''' dramatically prints out dot dot dot '''
+    if prefix:
+        print("\n")
+    else:
+        print()
+    time.sleep(1)
+    for i in range(3):
+        print(".", end=' ', flush=True)
+        time.sleep(0.5)
+    print("\n")
+
+def ringPhone(noprefix=False):
+    ''' dramatically prints out chiring chiring '''
+    if not noprefix:
+        print("\n")
+    time.sleep(0.4)
+    for i in range(2):
+        print("chi", end='', flush=True)
+        time.sleep(0.02)
+        print("ring", end=' ', flush=True)
+        time.sleep(0.4)
+        print("chiring", end=' ', flush=True)
+        time.sleep(1.2)
+    print("\n")
+
+def grabPhone():
+    ''' minigame to grab the phone quickly '''
+    ringWait = 2 + 2*random.random() # when the phone will ring
+    ringLimit = 0.3 # how long you have to answer the phone
+    startT = time.time()
+    
+    print("\n\nDirections: Grab the phone first! Press ENTER as soon as it rings.\n")
+    time.sleep(ringWait)
+
+    print("chiring")
+    temp = inpt()
+    if time.time() < startT + ringWait + 0.03: # picked up too early
+        print(str(PLAYER)+" grabbed for the telephone too early.\n")
+        return False
+    elif time.time() > startT + ringWait + ringLimit: # picked up too late
+        print(str(PLAYER)+" was too late.\n")
+        return False
+    else:
+        return True
+
+def enactLoss(victim):
+    ''' remove a member '''
+    time.sleep(1)
+    print('\n')
+    if victim in bosses.keys():
+        bosses[victim] = 0
+        print("notice:", victim.upper(), "from team BOSSES has been lost.")
+    if victim in rockers.keys():
+        rockers[victim] = 0
+        print("notice:", victim.upper(), "from team ROCKERS has been lost.")
+    if victim in retros.keys():
+        retros[victim] = 0
+        print("notice:", victim.upper(), "from team RETROFUTURISTS has been lost.")
+    printAlive()
+    time.sleep(1)
+
+def endgameRoutine():
+    ''' end a game without reaching the final stage '''
+    time.sleep(1)
+    print("Your game has ended! Final stats:")
+    printAlive()
+    print()
+    if (TEAM == "Bosses" and sum(bosses.values()) == 4) or (TEAM == "Rockers" and sum(rockers.values()) == 5) or (TEAM == "Retrofuturists" and sum(retros.values()) == 4):
+        print("You kept all members of the "+TEAM+" alive! Good job.")
+        time.sleep(1)
+        print("However, you were not able to discover who the caller was.\nPlay again?")
+    else:
+        print("Oh no! Seems like you lost a member :(")
+        time.sleep(1)
+        print("You were not able to discover who the caller was.\nPlay again?")
+
+def playFinale():
+    ''' the final stage of the game '''
+    allMembers = []
+    missing = []
+    for group in [bosses, rockers, retros]: # count up who's alive and who's missing
+        allMembers += [name for name in group if group[name] != 0 and name != PLAYER]
+        missing += [name for name in group if group[name] == 0]
+
+    # nicely format the missing into a string
+    if len(missing) == 0:
+        missStr = ""
+    elif len(missing) == 1:
+        missStr = missing[0]
+    elif len(missing) == 2:
+        missStr = ('{} and {}'.format(missing[0], missing[1]))
+    else:
+        missStr = ('{}, and {}'.format(', '.join(missing[:-1]), missing[-1]))
+
+    perfectScore = True if len(missStr) == 0 else False # if nobody was lost, get a perfect score
+
+    print(PLAYER+" warily enters a vast, empty garage. One after another, the surviving gang members join him, their motorcycles forming a circle.")
+    time.sleep(2)
+    print("Directions: On each round, you must choose three allies and one enemy to attack.")
+    print("The attack will fail if an ally is guilty or if the enemy is innocent.")
+    
+    callersLeft = 2 # unguessed callers
+    chance = 3 # chances left
+
+    while chance > 0: # iterate through chances
+        if callersLeft == 0: # all callers identified
+            print("\nCongratulations! "+PLAYER+" successfully identified the callers, Seungkwan and Dino, putting an end to their scheme to turn the gangs against each other and subsequently take over the world.")
+            if perfectScore:
+                print("You finished without losing any members! Great job!")
+            else:
+                print("Seems like you lost", missStr, "along the way, though. Play again?")
+            return
+
+        if chance == 1: # nicely inform how many chances left and how many callers left
+            print(PLAYER+" has", chance, "chance remaining ",end="",flush=True)
+        else:
+            print(PLAYER+" has", chance, "chances remaining ",end="",flush=True)
+        if callersLeft == 1:
+            print("to identify",callersLeft,"unknown caller.")
+        else:
+            print("to identify",callersLeft,"unknown callers.")
+        time.sleep(2.5)
+
+        for i, option in enumerate(allMembers): # print choices of allies/enemy
+            print("({})".format(i+1), option)
+            time.sleep(0.08)
+
+        allies = [] # choose allies ----
+        for i in range(1,4):
+            print("Choose Ally "+str(i)+":")
+            userChoice = inpt()
+            while True:
+                if not userChoice.isdigit() or int(userChoice)-1 not in list(range(len(allMembers))):
+                    print("invalid option, try again")
+                elif allMembers[int(userChoice)-1] in allies:
+                    print("ally already selected, try again")
+                else: # is valid
+                    break
+                userChoice = inpt()
+            allies.append(allMembers[int(userChoice)-1])
+        print("Choose Enemy:") # choose enemy ----
+        userChoice = inpt()
+        while True:
+            if not userChoice.isdigit() or int(userChoice)-1 not in list(range(len(allMembers))):
+                print("invalid option, try again")
+            elif allMembers[int(userChoice)-1] in allies:
+                print("already selected as an ally, try again")
+            else: # is valid
+                break
+            userChoice = inpt()
+        enemy = allMembers[int(userChoice)-1]
+
+        # determine if the player won
+        print("Attacking.", end="", flush=True); time.sleep(0.5)
+        print(".", end="", flush=True); time.sleep(0.5)
+        print(". ", end="", flush=True); time.sleep(0.5)
+        if (enemy != "Seungkwan" and enemy != "Dino") or ("Seungkwan" in allies) or ("Dino" in allies):
+            print("Attack failed.")
+        else:
+            print("Attack successful! Identified caller:", enemy)
+            callersLeft -= 1
+            #chance += 1 # make it easier to guess
+            allMembers.remove(enemy)
+        
+        chance -= 1
+
+    if callersLeft == 1: # ran out of chances, player was unsuccessful
+        print(PLAYER+" has 0 chances remaining to identify",callersLeft,"unknown caller.")
+    else:
+        print(PLAYER+" has 0 chances remaining to identify",callersLeft,"unknown callers.")
+    time.sleep(1)
+    print("\nOh no! "+PLAYER+" was unable to identify the callers in time. The garage erupts into a chaotic fight.")
+    print("Play again?")
+    return
+
+def giveIntro():
+    ''' print the game intro, select player, and load events '''
+    
+    introductionLines1 = ["CALL CALL CALL ADVENTURE!\n","Mysterious telephone calls are wreaking havoc on the three gangs of SVT: the Bosses, the Rockers, and the Retrofuturists.","Keep your gang alive, and try to identify the callers before it's too late!","You can choose from three characters to start from.","(1) Mingyu\n(2) Minghao\n(3) Vernon"]
+    for iLine in introductionLines1:
+        print(iLine); time.sleep(0.4)
+    userChoice = inpt()
+    while not userChoice.isdigit() or int(userChoice)-1 not in list(range(3)):
+        print("invalid option, try again")
+        userChoice = inpt()
+    PLAYER = ["Mingyu","Minghao","Vernon"][int(userChoice)-1]
+    TEAM = ["Bosses","Rockers","Retrofuturists"][int(userChoice)-1]
+    print("You begin as "+PLAYER+" from the "+TEAM+"' gang.")
+    time.sleep(1)
+    print("Here is a list of the current members of all gangs:")
+    time.sleep(0.5)
+    printAlive(endmark = "")
+    empty = inpt("\n\nPress ENTER to begin the game!")
+    print("\nYou can type (m) to view the current list of members.")
+    timeLapse(prefix=False)
+    events = loadInfo(PLAYER.lower()+" pov.txt")
+
+    return PLAYER, TEAM, events
+
+def giveLogCode():
+    print("\n*game log: "+("/".join(LOGGER[:-1]))+"*")
+
+PLAYER, TEAM, events = giveIntro() # give initial introduction to game
+
+while gameOver == False:
+    if currentCode == "endgame" or currentCode == "X5": # game ended
+        if currentCode == "endgame":
+            endgameRoutine()
+        if currentCode == "X5":
+            playFinale()
+        giveLogCode() # for playtesting
+        print("\n(X) to exit, or press ENTER to play again.")
+        temp = inpt()
+        if temp.lower() == "x": # exit game ------
+            gameOver = True
+            break
+        # reset game ------
+        bosses = dict.fromkeys(bosses, 1); rockers = dict.fromkeys(rockers, 1); retros = dict.fromkeys(retros, 1)
+        currentCode = "start"
+        PLAYER, TEAM, events = giveIntro()
+        LOGGER = [] # for playtesting
+        lastTime = time.time()
+
+    mainText, options, variables = events[currentCode] # load this scenario
+    override = False
+
+    # show main text
+    mainText = re.split('<|>',mainText) # separates out <actions> from main text
+    for article in mainText:
+        if article == "lapse": # dot dot dot
+            timeLapse()
+        elif article == "ring": # chiring chiring
+            ringPhone()
+        elif article == "noprefixring": # chiring chiring
+            ringPhone(noprefix=True)
+        elif article[:6] == "switch": # switch to member if they are alive
+            override = True # automatically selecting next outcome
+            searchFor = article[6:].split(':')[0]
+            alive = None
+            for group in [bosses, rockers, retros]:
+                if searchFor in group.keys():
+                    alive = group[searchFor]
+                    break
+            if alive == 1:
+                currentCode = article.split(':')[-1].split(',')[0] # choose first action
+            else:
+                currentCode = article.split(':')[-1].split(',')[1] # choose second action
+        elif article[:9] == "phonegame": # game to pick up the phone
+            override = True # automatically selecting next outcome
+            others = article.split(':')[-1].split(',')
+            success = grabPhone()
+            if success:
+                currentCode = others[0]
+            else:
+                currentCode = random.choice(others[1:])
+        elif article == "E": # didn't really use this much...
+            print(" [press ENTER to continue]", end='')
+            empty = inpt()
+            print()
+        elif article in ["bosses", "rockers", "retros"]: # replace <group> with alive members of that group
+            print(aliveMembers(article), end='', flush=True)
+        elif article == "day1" or article == "day2": # show day summary
+            print("\n\nThe day has ended.")
+            printAlive()
+        elif article == "N": # new line
+            print('\n')
+        elif article.replace('.','',1).isdigit(): # wait for <number> of seconds
+            time.sleep(float(article))
+        else: # print text normally
+            print(article, end='', flush=True)
+
+    if variables != None and variables[0] == "-": # lose the member described
+        enactLoss(variables[1:])
+
+    if override == False: # have user choose the next action
+        print('\n')
+
+        # give options for action
+        if len(options) == 0:
+            raise ValueError # this shouldn't happen
+
+        for i, option in enumerate(options): # show all choices for actions
+            print("({})".format(i+1), option[1])
+        userChoice = inpt()
+        while userChoice.lower() == "m" or not userChoice.isdigit() or int(userChoice)-1 not in list(range(len(options))):
+            if userChoice.lower() == "m": # show current member list
+                printAlive()
+                print("choose an action")
+                userChoice = inpt()
+            else:
+                print("invalid option, try again") # entered invalid character
+                userChoice = inpt()
+
+
+        # get next event
+        currentCode = options[int(userChoice)-1][0]
+        LOGGER.append(str(currentCode)+"-"+str(int(time.time()-lastTime))) # playtesting
+        lastTime = time.time()
+        print()
+
+    if currentCode[0] in codeToPlayer.keys(): # easily keep track of current player
+        PLAYER = codeToPlayer[currentCode[0]]
+
+
+# end insert code ----------------------------------------------------------------
+
+
+</textarea><br /> 
+</form> 
+
+<textarea spellcheck="false" placeholder="Type here" id="consoleInp" cols="10" rows="2"></textarea>
+<pre id="output" ></pre>
+<div id="hh1"></div>
+<div id="hh2"></div>
+<div id="hh3"></div>
+<p>by mgsunbaenim</p> 
+<div id="buttonWrap">
+<button type="button" onclick="runit()">Reset</button> 
+<button type="button" onclick="window.alert('not implemented');">Save</button> 
+<button type="button" onclick="window.alert('not implemented');">Undo</button>
+</div>
+
+<!-- SK scripts -->
+
+<script type="text/javascript"> 
+// force cursor to input box
+function refocus(){
+    var input = document.getElementById('consoleInp');
+    input.focus();
+    input.select();
+}
+// viewing bottom of output box
+function updateScroll(){
+    var element = document.getElementById("output");
+    element.scrollTop = element.scrollHeight;
+}
+// [SK code] output functions are configurable; appends some text to a pre element.
+function outf(text) { 
+    var mypre = document.getElementById("output"); 
+    mypre.innerHTML = mypre.innerHTML + text; 
+} 
+function builtinRead(x) {
+    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+            throw "File not found: '" + x + "'";
+    return Sk.builtinFiles["files"][x];
+}
+// [SK] grab code (id="yourcode"), output (id="output"), user input box (id="consoleInp")
+function runit() { 
+    var prog = document.getElementById("yourcode").value; 
+    var mypre = document.getElementById("output"); 
+    mypre.innerHTML = ''; 
+    Sk.pre = "output";
+    // replacing configure with overflow 43733896
+    Sk.configure({
+    inputfun: function () {
+        // the function returns a promise to give a result back later...
+        return new Promise(function(resolve,reject){
+            $("#consoleInp").on("keyup",function(e){
+                if (e.keyCode == 13)
+                {
+                    // remove keyup handler from #output
+                    $("#consoleInp").off("keyup");
+                    // resolve the promise with the value of the input field
+                    resolve($("#consoleInp").val());
+                    // clear the text box!
+                    document.getElementById("consoleInp").value = "";
+                    updateScroll();
+                }
+            })
+        })
+    },
+    output: function (oText) {
+        outf(oText);
+        updateScroll();
+    },
+    read: builtinRead,
+    __future__: Sk.python3
+    });
+    var myPromise = Sk.misceval.asyncToPromise(function() {
+        return Sk.importMainWithBody("<stdin>", false, prog, true);
+    });
+    myPromise.then(function(mod) {
+        console.log('success');
+    },
+        function(err) {
+        console.log(err.toString());
+    });
+} 
+
+// run on page load
+refocus()
+runit()
+</script>
+
+<!-- include scripts and end -->
+<script src="js/skulpt.min.js" type="text/javascript"></script>
+<script src="js/skulpt-stdlib.js" type="text/javascript"></script>
+</body> 
+
+</html> 
