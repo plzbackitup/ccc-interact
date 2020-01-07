@@ -97,15 +97,15 @@ a {
 
 /* unvisited link */
 a:link {
-    color: rgb(145, 168, 208);
+    color: rgb(73, 84, 104);
 }
 
 /* visited link */
 a:visited {
-    color: rgb(145, 168, 208);
+    color: rgb(73, 84, 104);
 }
 
 /* mouse over link */
 a:hover {
-    color: rgb(145, 208, 200);;
+    color: rgb(145, 168, 208);
 }
