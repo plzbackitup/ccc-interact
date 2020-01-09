@@ -1,6 +1,66 @@
-start/Locked!{forceraiseerror}
+start/Vernon wakes up blearily. The pink lights of the Retrofuturists' arcade shine brightly. It seems that he's fallen asleep on a beanbag.<N>"Yes!" exclaims Dino as he beats Joshua at Pacman once again. "Vernon, your turn to play me next!"<N>"What? Vernon said he'd come with me to the barbershop," Jun whines.{V2/Play the game with Dino.}{V6/Go with Jun.}
 
+V2/Vernon plays video games with Dino well into the night. Joshua left to go home hours ago, but Jun has still not returned. Dino is worried.{V3/Let Dino call the barbershop.}{V3a/"Jun probably went home already."}
 
+V3a/Dino gets angry at Vernon and makes the call anyway.<lapse>Nobody at the barbershop is answering./-Wonwoo{V4/Wait at the arcade with Dino.}{V5/Go find Jun.}
 
+V3/Dino begins dialing the barbershop's number.<lapse>Nobody at the barbershop is answering.{V4/Wait at the arcade with Dino.}{V5/Go find Jun.}
 
+V4/Vernon stays at the arcade and plays video games with Dino a bit longer. For some reason, he feels that a crisis has been miraculously averted.<day1>{N1/Switch character to Jun.}
+
+V5/The barbershop is closed. Vernon returns home and decides to hope for the best./-Jun{U1/Switch character to Joshua.}
+
+V6/Vernon goes with Jun to get a haircut. Vernon waits around in the barbershop's lobby until Woozi tells him to get a haircut or leave.{V7/Get a haircut.}{V6b/Leave.}
+
+V6b/Vernon returns home./-Jun{U1/Switch character to Joshua.}
+
+V7/The whirring of the blow dryer finally ceases. Vernon cracks open one eye to see his new hairstyle, which vaguely reminds him of a fortune cookie.<lapse>"How is it?" asks Woozi.{V7a/Stare blankly at Woozi in shock.}{V8/"Uh, it looks great!"}
+
+V7a/Woozi prods Vernon and asks again, "How does it look?"{V8/"It looks great!"}
+
+V8/Woozi cackles gleefully and walks away. Fortunately, Wonwoo comes to fix Vernon's hair.<2><ring>The phone rings, and Minghao answers. Suddenly Jun and Minghao are scrambling to get out the door. Something about Jun's cat escaping?{V8a/Let them leave.}{V9/Tell them not to go.}
+
+V8a/Jun and Minghao leave. DK finishes cleaning up the shop, and he leaves to go home, along with Woozi and Jeonghan.<N>Wonwoo continues to fix Vernon's hair.<2><ring>"Wait, an advertisement might help. For a lost cat. We could make fliers and put them up around the city," Wonwoo tells Vernon. "Do you think fliers would be a good idea?"<4><ring>"The advertisement might be better," Wonwoo decides. The phone falls silent. "Anyway, your hair's fixed now."<N>Vernon goes home./-Minghao{U1/Switch character to Joshua.}
+
+V9/Vernon tells Jun and Minghao to ignore the cat. Jun and Minghao are now furious at Vernon. The racket wakes Jeonghan, who comes downstairs and shoos everyone out of the shop.<N>Vernon is left with a bad haircut, and he argues with Jun on the way home.<2>/-Wonwoo{N1/Switch character to Jun.}
+
+N1/<noprefixring>Jun is woken up by the telephone. Half-asleep, Jun answers it.<lapse>"I have your cat. Come to S.S.W.A." the voice says.{N2/Rescue the cat!}{N1a/Go back to sleep.}
+
+N1a/Jun goes back to sleep. Plagued by guilt, Jun has nightmares about his cat.{U1/Switch character to Joshua.}
+
+N2/Jun zooms to the address on his motorcycle immediately. He arrives at S.S.W.A, which appears to be an old factory building. The entryway opens easily. Jun steps inside.<lapse>The interior is surprisingly clean, with a floor made of slate and ventilation tubes above. There's a junction up ahead...{N2a/Turn left.}{N2b/Turn right.}
+
+N2a/Jun follows the pathway into a small room. Uh oh... it seems Jun has run into a dead end. He turns around, but the door has shut behind him./-Jun{U1/Switch character to Joshua.}
+
+N2b/Jun follows the pathway. There's another junction up ahead.{N2c/Turn left.}{N2a/Turn right.}
+
+N2c/Jun arrives in an open room. His cat is nowhere to be seen. The only object is a single telephone resting on the floor.<lapse>There are footsteps behind him. S.Coups and Jeonghan emerge from the shadows.{N2d/Run for it.}{N2e/"Have you seen my cat anywhere?"}
+
+N2d/Jun runs away, jumps on his motorcycle, and heads home.{endgame/Continue.}
+
+N2e/S.Coups and Jeonghan trade glances.<N>"No, we haven't," says S.Coups. Jun considers this.<2><phonegame:N2f,N2g,N2h>{null/null}
+
+N2f/Jun grabs the telephone and runs for his motorcycle.<2><N>"Congratulations," the voice on the phone tells him. "You've made it to the last stage. If you wanna see your cat again, go to the central garage."<N>Jun can hear engines starting as S.Coups and Jeonghan begin pursuit.{X5/Go faster!}
+
+N2g/Jun is too slow. S.Coups snatches up the telephone and listens, then nods and hangs up. "We're at the last stage? Whatever that means. Jeonghan, let's go."{X5/Follow them.}{N2d/Go home!}
+
+N2h/Jun is too slow. Jeonghan snatches up the telephone and listens, then nods and hangs up. "We've come to the last stage. S.Coups, let's go!"{X5/Follow them.}{N2d/Go home!}
+
+U1/<noprefixring>Joshua is woken by the telephone. He answers.<lapse>"This is Jeonghan," the voice says. "Hoshi has been badly hurt. Can you send some people as backup?"{U1a/Stay home.}{U1b/Get Vernon and go help.}
+
+U1a/Jeonghan hangs up. Joshua goes back to sleep./-Hoshi.{endgame/Continue.}
+
+U1b/Joshua and Vernon follow Jeonghan's directions and quickly arrive at an old factory building. Joshua can faintly hear yelling inside: people are fighting.<N>"Will we get there in time?" asks Vernon.{U2/"We could try riding the motorcycle through the walls."}
+
+U2/Vernon laughs. "That's funny!" he exclaims.{U3/"All right, here we go!"}
+
+U3/"Wait no no no-"{U4/Ride the motorcycle through the walls.}
+
+U4/Plaster and dust scatter everywhere as Joshua and Vernon rocket through the walls of the factory.<N>Through his helmet, Joshua can see two figures standing in the center of the room: Mingyu and Minghao.<N>Between them, a telephone rests on the ground.<4><lapse>"Get the phone!" Vernon yells.<phonegame:U44,U4a,U4b>{null/null}
+
+U4a/Mingyu answers the telephone instead. Joshua is too late, and continues riding to a safe distance away./-S.Coups{endgame/Continue.}
+
+U4b/Minghao answers the telephone instead. Joshua is too late, and continues riding to a safe distance away./-Jeonghan{endgame/Continue.}
+
+U44/Joshua grabs the telephone and speeds away.<lapse>"Congrats, I guess," the voice on the phone tells him. "You've made it to the last stage. If you wanna get <losses> back, go to the central garage. Better get there first."<4>Joshua relays this information to Vernon. Behind him, he can hear engines starting as Minghao and <bosses> join the pursuit.{X5/Go faster!}
 
