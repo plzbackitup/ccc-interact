@@ -288,15 +288,12 @@ def playFinale():
 def giveIntro():
     ''' print the game intro, select player, and load events '''
     
-    introductionLines1 = ["CALL CALL CALL: THE GAME\n","Mysterious telephone calls are wreaking havoc on the three gangs of SVT: the Bosses, the Rockers, and the Retrofuturists.","Keep your gang alive, and try to identify the callers before it's too late!","You can choose from three characters to start from.","(1) Mingyu\n(2) Minghao [locked]\n(3) Vernon [locked]"]
+    introductionLines1 = ["CALL CALL CALL: THE GAME\n","Mysterious telephone calls are wreaking havoc on the three gangs of SVT: the Bosses, the Rockers, and the Retrofuturists.","Keep your gang alive, and try to identify the callers before it's too late!","You can choose from three characters to start from.","(1) Mingyu\n(2) Minghao\n(3) Vernon"]
     for iLine in introductionLines1:
         print(iLine); time.sleep(0.4)
     userChoice = inpt()
-    while not userChoice.isdigit() or int(userChoice)-1 not in [0]:
-        if not userChoice.isdigit():
-            print("invalid option, try again")
-        else:
-            print("player locked, try again")
+    while not userChoice.isdigit():
+        print("invalid option, try again")
         userChoice = inpt()
     PLAYER = ["Mingyu","Minghao","Vernon"][int(userChoice)-1]
     TEAM = ["Bosses","Rockers","Retrofuturists"][int(userChoice)-1]
